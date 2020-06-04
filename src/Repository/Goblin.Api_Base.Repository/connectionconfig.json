@@ -1,0 +1,7 @@
+﻿{
+  "ConnectionStrings": {
+    "Development": "Data Source=localhost,1433;Initial Catalog=Api_Base;User ID=sa;Password=Password123;Application Name=Goblin.Api_Base;Trusted_Connection=False;MultipleActiveResultSets=True",
+    "Staging": "Data Source=.;Initial Catalog=Api_Base;User ID=Goblin.Api_Base;Password=Goblin.Api_Base;Application Name=Goblin.Api_Base;Trusted_Connection=False;MultipleActiveResultSets=True",
+    "Production": "Data Source=.;Initial Catalog=Api_Base;User ID=Api_Base;Password=Goblin.Api_Base;Application Name=Goblin.Api_Base;Trusted_Connection=False;MultipleActiveResultSets=True"
+  }
+}

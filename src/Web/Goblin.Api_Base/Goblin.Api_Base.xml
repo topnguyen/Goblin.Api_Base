@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Goblin.Api_Base</name>
+    </assembly>
+    <members>
+        <member name="M:Goblin.Api_Base.Controllers.TestController.Index(Goblin.Api_Base.Controllers.TestController.TestModel)">
+            <summary>
+                Test Model
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
