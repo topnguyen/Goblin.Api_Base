@@ -13,9 +13,9 @@
     
     <ItemGroup>
 		<!-- Share -->
-		<ProjectReference Include="..\Goblin.Api_Base.Share\Goblin.Api_Base.Share.csproj" />
+		<ProjectReference Include="..\..\..\Goblin.Core\Goblin.Core\Goblin.Core.csproj" />
 
 		<!-- Core -->
-		<ProjectReference Include="..\..\..\..\Goblin.Core\Goblin.Core\Goblin.Core.csproj" />
-	</ItemGroup>
+        <ProjectReference Include="..\Goblin.Api_Base.Share\Goblin.Api_Base.Share.csproj" />
+    </ItemGroup>
 </Project>

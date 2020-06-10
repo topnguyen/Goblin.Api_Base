@@ -35,7 +35,7 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\..\Goblin.Core\Goblin.Core.Web\Goblin.Core.Web.csproj" />
+        <ProjectReference Include="..\..\..\Goblin.Core\Goblin.Core.Web\Goblin.Core.Web.csproj" />
         
         <ProjectReference Include="..\..\Cross\Goblin.Api_Base.Core\Goblin.Api_Base.Core.csproj" />
         <ProjectReference Include="..\..\Cross\Goblin.Api_Base.Mapper\Goblin.Api_Base.Mapper.csproj" />
