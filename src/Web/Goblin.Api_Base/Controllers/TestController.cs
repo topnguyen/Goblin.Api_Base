@@ -1,3 +1,4 @@
+using System;
 using Elect.Web.Swagger.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,14 @@ namespace Goblin.Api_Base.Controllers
             public string Data { get; set; }
 
             public TestEnum Enum { get; set; }
+
+            public DateTimeOffset DateTimeData { get; set; }
+            
+            public TimeSpan TimeSpanData { get; set; }
+
+            public double DoubleData { get; set; }
+
+            public decimal DecimalData { get; set; }
         }
 
         public enum TestEnum
