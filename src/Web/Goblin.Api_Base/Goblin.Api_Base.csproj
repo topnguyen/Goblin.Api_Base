@@ -11,9 +11,15 @@
         <DocumentationFile>Goblin.Api_Base.xml</DocumentationFile>
         <NoWarn>1701;1702;1705;1591</NoWarn>
 
+        <!-- UI -->
+        <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
+
+        <!-- Very Important to enable Razor Recompile Feature, turn is to false cannot get Views.dll in build folder -->
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+        
         <!-- Mvc Razor Compile -->
-        <RazorCompileOnPublish>true</RazorCompileOnPublish>
-        <RazorCompileOnBuild>true</RazorCompileOnBuild>
+        <RazorCompileOnPublish>false</RazorCompileOnPublish>
+        <RazorCompileOnBuild>false</RazorCompileOnBuild>
 
         <!-- 
             As far as I know, this is primarily used for Razor pages. 
@@ -27,6 +33,7 @@
         <OutputPath>.\bin\</OutputPath>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
     </PropertyGroup>
     <!-- Copy to Output -->
     <ItemGroup>
