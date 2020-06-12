@@ -11,10 +11,10 @@
         <DocumentationFile>Goblin.Api_Base.xml</DocumentationFile>
         <NoWarn>1701;1702;1705;1591</NoWarn>
 
-        <!-- UI -->
-        <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
-        <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+        <!-- Mvc Razor Compile -->
+        <RazorCompileOnPublish>true</RazorCompileOnPublish>
+        <RazorCompileOnBuild>true</RazorCompileOnBuild>
+
         <!-- 
             As far as I know, this is primarily used for Razor pages. 
             They are compiled at runtime, and the compiler needs access to reference assemblies, to make sure it compiles correctly. 
