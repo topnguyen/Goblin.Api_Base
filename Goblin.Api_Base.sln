@@ -56,16 +56,6 @@ EndProject
 Global
 
 #----------
-# 5. Nuget
-#----------
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Nuget", "6. Nuget", "{F2438EE6-2DFE-4899-9C5A-69463196A11C}"
-ProjectSection(SolutionItems) = preProject
-	nuget\Goblin.Api_Base.nuspec = nuget\Goblin.Api_Base.nuspec
-	nuget\publish.md = nuget\publish.md
-EndProjectSection
-EndProject
-
-#----------
 # Global Section
 #----------
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
