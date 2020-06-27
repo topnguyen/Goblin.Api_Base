@@ -4,7 +4,7 @@
         <name>Goblin.Api_Base</name>
     </assembly>
     <members>
-        <member name="M:Goblin.Api_Base.Controllers.FileController.Upload(Goblin.Api_Base.Share.Models.GoblinApi_BaseCreateSampleModel,System.Threading.CancellationToken)">
+        <member name="M:Goblin.Api_Base.Controllers.SampleController.Upload(Goblin.Api_Base.Share.Models.GoblinApi_BaseCreateSampleModel,System.Threading.CancellationToken)">
             <summary>
                 Create Sample
             </summary>
@@ -15,7 +15,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:Goblin.Api_Base.Controllers.FileController.Get(System.Int64,System.Threading.CancellationToken)">
+        <member name="M:Goblin.Api_Base.Controllers.SampleController.Get(System.Int64,System.Threading.CancellationToken)">
             <summary>
                 Get Sample
             </summary>
@@ -23,7 +23,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:Goblin.Api_Base.Controllers.FileController.Delete(System.Int64,System.Threading.CancellationToken)">
+        <member name="M:Goblin.Api_Base.Controllers.SampleController.Delete(System.Int64,System.Threading.CancellationToken)">
             <summary>
                 Delete Sample
             </summary>

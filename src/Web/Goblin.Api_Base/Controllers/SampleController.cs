@@ -10,11 +10,11 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace Goblin.Api_Base.Controllers
 {
-    public class FileController : BaseController
+    public class SampleController : BaseController
     {
         private readonly ISampleService _sampleService;
 
-        public FileController(ISampleService sampleService)
+        public SampleController(ISampleService sampleService)
         {
             _sampleService = sampleService;
         }
