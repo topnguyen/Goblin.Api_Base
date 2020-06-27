@@ -16,10 +16,12 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
+	
 	<ItemGroup>
 		<ProjectReference Include="..\Goblin.Api_Base.Contract.Repository\Goblin.Api_Base.Contract.Repository.csproj" />
 		<ProjectReference Include="..\..\Cross\Goblin.Api_Base.Core\Goblin.Api_Base.Core.csproj" />
 	</ItemGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.5" />

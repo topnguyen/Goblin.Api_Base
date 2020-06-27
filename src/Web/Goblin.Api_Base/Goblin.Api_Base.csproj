@@ -15,7 +15,7 @@
         <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
 
         <!-- Very Important to enable Razor Recompile Feature, turn is to false cannot get Views.dll in build folder -->
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+        <EnableDefaultContentItems>true</EnableDefaultContentItems>
         
         <!-- Mvc Razor Compile -->
         <RazorCompileOnPublish>false</RazorCompileOnPublish>
@@ -34,16 +34,15 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+        <DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
     </PropertyGroup>
     <!-- Copy to Output -->
     <ItemGroup>
-        <Content Include="Goblin.Api_Base.xml;appsettings.json">
+        <Content Include="Goblin.Api_Base.xml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Goblin.Core\Goblin.Core.Web\Goblin.Core.Web.csproj" />
-        
         <ProjectReference Include="..\..\Cross\Goblin.Api_Base.Core\Goblin.Api_Base.Core.csproj" />
         <ProjectReference Include="..\..\Cross\Goblin.Api_Base.Mapper\Goblin.Api_Base.Mapper.csproj" />
         

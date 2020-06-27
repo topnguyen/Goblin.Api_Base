@@ -4,11 +4,31 @@
         <name>Goblin.Api_Base</name>
     </assembly>
     <members>
-        <member name="M:Goblin.Api_Base.Controllers.TestController.Index(Goblin.Api_Base.Controllers.TestController.TestModel)">
+        <member name="M:Goblin.Api_Base.Controllers.FileController.Upload(Goblin.Api_Base.Share.Models.GoblinApi_BaseCreateSampleModel,System.Threading.CancellationToken)">
             <summary>
-                Test Model
+                Create Sample
             </summary>
-            <param name="content"></param>
+            <remarks>
+                <b>SampleData</b>: Cannot be null or empty <br />
+            </remarks>
+            <param name="model"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goblin.Api_Base.Controllers.FileController.Get(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+                Get Sample
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goblin.Api_Base.Controllers.FileController.Delete(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+                Delete Sample
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
             <returns></returns>
         </member>
     </members>
