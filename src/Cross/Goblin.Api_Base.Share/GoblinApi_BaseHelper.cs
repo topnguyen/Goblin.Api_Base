@@ -12,6 +12,8 @@ namespace Goblin.Api_Base.Share
     public static class GoblinApi_BaseHelper
     {
         public static string Domain { get; set; } = string.Empty;
+        
+        public static string AuthorizationKey { get; set; } = string.Empty;
 
         public static async Task<GoblinApi_BaseSampleModel> CreateAsync(GoblinApi_BaseCreateSampleModel model,
             CancellationToken cancellationToken = default)
@@ -53,9 +55,8 @@ namespace Goblin.Api_Base.Share
             var fileModel =
                 await endpoint
                     .AppendPathSegment(GoblinApi_BaseEndpoints.GetSample)
-                    .WithHeader(GoblinHeaderKeys.Authorization, model.AuthorizationKey)
+                    .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
                     .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
-                    .SetQueryParam(GoblinHeaderKeys.Authorization, model.AuthorizationKey)
                     .SetQueryParam(GoblinHeaderKeys.UserId, model.LoggedInUserId)
                     .GetJsonAsync<GoblinApi_BaseSampleModel>(cancellationToken: cancellationToken)
                     .ConfigureAwait(true);
@@ -70,7 +71,7 @@ namespace Goblin.Api_Base.Share
 
             await endpoint
                 .AppendPathSegment(GoblinApi_BaseEndpoints.DeleteSample)
-                .WithHeader(GoblinHeaderKeys.Authorization, model.AuthorizationKey)
+                .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
                 .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
                 .DeleteAsync(cancellationToken)
                 .ConfigureAwait(true);
