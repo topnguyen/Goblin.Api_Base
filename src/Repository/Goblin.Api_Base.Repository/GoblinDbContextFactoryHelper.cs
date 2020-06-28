@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Goblin.Api_Base.Repository
 {
-    public static class GoblinDbContextSetup
+    public static class GoblinDbContextFactoryHelper
     {
         /// <summary>
         ///     Setup Goblin DB Context based on have <param name="services"></param> data or not <br />
