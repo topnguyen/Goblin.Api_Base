@@ -6,7 +6,7 @@
     <members>
         <member name="F:Goblin.Api_Base.Share.GoblinApi_BaseEndpoints.CreateSample">
             <summary>
-                HTTP Method: PUT
+                HTTP Method: POST
             </summary>
         </member>
         <member name="F:Goblin.Api_Base.Share.GoblinApi_BaseEndpoints.GetSample">
