@@ -1,11 +1,12 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Flurl;
 using Flurl.Http;
+using Flurl.Http.Configuration;
 using Goblin.Core.Constants;
 using Goblin.Core.Errors;
 using Goblin.Api_Base.Share.Models;
+using Goblin.Core.Settings;
 
 namespace Goblin.Api_Base.Share
 {
@@ -14,16 +15,24 @@ namespace Goblin.Api_Base.Share
         public static string Domain { get; set; } = string.Empty;
         
         public static string AuthorizationKey { get; set; } = string.Empty;
+        
+        public static readonly ISerializer JsonSerializer = new NewtonsoftJsonSerializer(GoblinJsonSetting.JsonSerializerSettings);
 
         public static async Task<GoblinApi_BaseSampleModel> CreateAsync(GoblinApi_BaseCreateSampleModel model,
             CancellationToken cancellationToken = default)
         {
             try
             {
-                var endpoint = Domain;
+                var endpoint = Domain
+                    .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
+                    .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
+                    .AppendPathSegment(GoblinApi_BaseEndpoints.CreateSample);
 
                 var fileModel = await endpoint
-                    .AppendPathSegment(GoblinApi_BaseEndpoints.CreateSample)
+                    .ConfigureRequest(x =>
+                    {
+                        x.JsonSerializer = JsonSerializer;
+                    })
                     .PostJsonAsync(model, cancellationToken: cancellationToken)
                     .ReceiveJson<GoblinApi_BaseSampleModel>()
                     .ConfigureAwait(true);
@@ -50,14 +59,18 @@ namespace Goblin.Api_Base.Share
         public static async Task<GoblinApi_BaseSampleModel> GetAsync(GoblinApi_BaseGetFileModel model,
             CancellationToken cancellationToken = default)
         {
-            var endpoint = Domain.Replace("{id}", model.Id.ToString());
+            var endpoint =
+                Domain
+                    .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
+                    .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
+                    .AppendPathSegment(GoblinApi_BaseEndpoints.GetSample.Replace("{id}", model.Id.ToString()));
 
             var fileModel =
                 await endpoint
-                    .AppendPathSegment(GoblinApi_BaseEndpoints.GetSample)
-                    .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
-                    .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
-                    .SetQueryParam(GoblinHeaderKeys.UserId, model.LoggedInUserId)
+                    .ConfigureRequest(x =>
+                    {
+                        x.JsonSerializer = JsonSerializer;
+                    })
                     .GetJsonAsync<GoblinApi_BaseSampleModel>(cancellationToken: cancellationToken)
                     .ConfigureAwait(true);
 
@@ -67,12 +80,16 @@ namespace Goblin.Api_Base.Share
         public static async Task DeleteAsync(GoblinApi_BaseDeleteSampleModel model,
             CancellationToken cancellationToken = default)
         {
-            var endpoint = Domain.Replace("{id}", model.Id.ToString());
-
-            await endpoint
-                .AppendPathSegment(GoblinApi_BaseEndpoints.DeleteSample)
+            var endpoint = Domain
                 .WithHeader(GoblinHeaderKeys.Authorization, AuthorizationKey)
                 .WithHeader(GoblinHeaderKeys.UserId, model.LoggedInUserId)
+                .AppendPathSegment(GoblinApi_BaseEndpoints.DeleteSample.Replace("{id}", model.Id.ToString()));
+
+            await endpoint
+                .ConfigureRequest(x =>
+                {
+                    x.JsonSerializer = JsonSerializer;
+                })
                 .DeleteAsync(cancellationToken)
                 .ConfigureAwait(true);
         }
