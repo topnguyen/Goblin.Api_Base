@@ -28,13 +28,9 @@
     <files>
         <file src="Logo.png" target=""/>
         
-        <file src="..\src\Cross\Goblin.Api_Base.Share\bin\Goblin.Core.dll" target="lib\netstandard2.1"/>
-        <file src="..\src\Cross\Goblin.Api_Base.Share\bin\Goblin.Core.pdb" target="lib\netstandard2.1"/>
-        
         <file src="..\src\Cross\Goblin.Api_Base.Share\bin\Goblin.Api_Base.Share.dll" target="lib\netstandard2.1"/>
         <file src="..\src\Cross\Goblin.Api_Base.Share\bin\Goblin.Api_Base.Share.pdb" target="lib\netstandard2.1"/>
         <file src="..\src\Cross\Goblin.Api_Base.Share\bin\Goblin.Api_Base.Share.xml" target="lib\netstandard2.1"/>
-        
         <file src="..\src\Cross\Goblin.Api_Base.Share\**\*.cs" target="src" exclude="**\obj*\**\*.cs"/>
     </files>
 </package>
