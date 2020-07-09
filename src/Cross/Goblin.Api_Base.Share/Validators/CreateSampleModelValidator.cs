@@ -1,7 +1,7 @@
 using FluentValidation;
 using Goblin.Api_Base.Share.Models;
 
-namespace Goblin.Api_Base.Core.Validators
+namespace Goblin.Api_Base.Share.Validators
 {
     public class CreateSampleModelValidator : AbstractValidator<GoblinApi_BaseCreateSampleModel>
     {
