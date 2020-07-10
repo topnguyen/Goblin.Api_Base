@@ -18,7 +18,7 @@ namespace Goblin.Api_Base.Share
 
             var responseString = await ex.GetResponseStringAsync().ConfigureAwait(true);
 
-            var message = responseString ?? ex.Message;
+            var message = string.IsNullOrWhiteSpace(responseString) ? ex.Message : responseString;
 
             throw new Exception(message);
         }
